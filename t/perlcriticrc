@@ -1,0 +1,6 @@
+# We really need it in SLURP
+[-Perl::Critic::Policy::BuiltinFunctions::ProhibitStringyEval]
+
+# We need to do these when creating methods
+[Perl::Critic::Policy::TestingAndDebugging::ProhibitNoStrict]
+allow = refs
