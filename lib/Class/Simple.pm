@@ -61,7 +61,18 @@ my @args = @_;
 			my $ref = refaddr($self);
 			croak("$attrib is readonly:  cannot set.")
 			  if ($READONLY{$ref}->{$store_as});
-			return ($STORAGE{$ref}->{$store_as} = shift(@_));
+			if (@_ > 1) {
+				# Must be initialized (in new or init) as an array ref or hash ref.
+				if (ref $STORAGE{$ref}->{$store_as} eq 'ARRAY') {
+					@{$STORAGE{$ref}->{$store_as}}[$_[0]] = $_[1];
+					return (@{$STORAGE{$ref}->{$store_as}}[$_[0]]);
+				} elsif (ref $STORAGE{$ref}->{$store_as} eq 'HASH') {
+					$STORAGE{$ref}->{$store_as}->{$_[0]} = $_[1];
+					return ($STORAGE{$ref}->{$store_as}->{$_[0]});
+				}
+			} else {
+				return ($STORAGE{$ref}->{$store_as} = shift(@_));
+			}
 		};
 	}
 	elsif ($prefix eq 'get')
