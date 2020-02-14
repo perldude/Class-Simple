@@ -1,4 +1,4 @@
-# $Id: anon.t,v 1.2 2006/10/19 18:18:22 sullivan Exp $
+# $Id$
 
 use Test::More tests => 3;
 BEGIN { use_ok('Class::Simple') };		##

@@ -1,4 +1,4 @@
-# $Id: private1.t,v 1.4 2007/10/02 23:04:47 sullivan Exp $
+# $Id$
 
 package Foo;
 use Test::More tests => 7;

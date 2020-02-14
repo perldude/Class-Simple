@@ -1,4 +1,4 @@
-# $Id: pod.t,v 1.1 2006/10/20 17:36:52 sullivan Exp $
+# $Id$
 
 use Test::More;
 eval 'use Test::Pod';

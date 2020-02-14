@@ -1,4 +1,4 @@
-# $Id: isa.t,v 1.1 2007/04/03 19:47:16 sullivan Exp $
+# $Id$
 #
 #	BUILD is supposed to happen at the oldest ancestor first, then
 #	go down the family tree.  This tests that.

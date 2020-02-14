@@ -1,4 +1,4 @@
-# $Id: storable.t,v 1.1 2007/10/29 21:08:54 sullivan Exp $
+# $Id$
 #
 #	Testing the Storable hooks.
 
