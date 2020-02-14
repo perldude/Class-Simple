@@ -1,4 +1,4 @@
-# $Id: inherit.t,v 1.1 2007/10/08 18:23:19 sullivan Exp $
+# $Id$
 
 use Test::More tests => 2;
 BEGIN { use_ok('Class::Simple') };				##

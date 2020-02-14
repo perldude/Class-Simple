@@ -1,4 +1,4 @@
-# $Id: nonew.t,v 1.1 2007/10/03 23:32:37 sullivan Exp $
+# $Id$
 
 use Test::More tests => 3;
 BEGIN { use_ok('Class::Simple') };			##

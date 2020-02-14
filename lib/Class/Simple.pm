@@ -1,4 +1,4 @@
-#$Id: Simple.pm,v 1.29 2008/01/01 16:34:15 sullivan Exp $
+#$Id$
 #
 #	See the POD documentation starting towards the __END__ of this file.
 
@@ -8,7 +8,7 @@ use 5.008;
 use strict;
 use warnings;
 
-our $VERSION = '0.16';
+our $VERSION = '1.1.1';
 
 use Scalar::Util qw(refaddr);
 use Carp;
@@ -373,6 +373,18 @@ sub init
 {
 my $self = shift;
 
+        #
+        # If we see an even number of arguments, assume they are initializers.
+        # Don't like that behavior?  Override init().
+        #
+        if (scalar(@_) && scalar(@_) % 2 == 0) {
+                my %args = @_;
+                while ( my ($k, $v) = each(%args) )
+                {
+                        $self->$k($v);
+                }
+        }
+
 	$self->_travel_isa('init', 'BUILD', @_);
 	return ($self);
 }
@@ -580,14 +592,17 @@ Programmer error--there is only so much that B<Class::Simple> can fix :-).
 
 =over 4
 
-=item B<new()>
+=item B<new(>[attr => val...]B<)>
 
 Returns the object and calls B<BUILD()>.
+
+If key/value pairs are included, the keys will be treated as attributes
+and the values will be used to initialize its respective attribute.
 
 =item B<privatize(>qw(method1 method2 ...B<)>
 
 Mark the given methods as being private to the class.
-They will only be accessible to the class or its ancestors.
+They will only be accessible to the class or its children.
 Make sure this is called before you start instantiating objects.
 It should probably be put in a B<BEGIN> or B<INIT> block.
 
@@ -741,9 +756,13 @@ L<Storable>
 
 Michael Sullivan, E<lt>perldude@mac.comE<gt>
 
+=head1 REPOSITORY
+
+L<https://github.com/perldude/Class-Simple>
+
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2007 by Michael Sullivan
+Copyright (C) 2007-2020 by Michael Sullivan
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.6 or,

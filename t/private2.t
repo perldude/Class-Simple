@@ -1,4 +1,4 @@
-# $Id: private2.t,v 1.10 2007/10/29 21:14:13 sullivan Exp $
+# $Id$
 
 package Foo;
 use base qw(Class::Simple);

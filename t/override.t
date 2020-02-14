@@ -1,4 +1,4 @@
-# $Id: override.t,v 1.1 2007/10/08 19:19:18 sullivan Exp $
+# $Id$
 
 use Test::More tests => 6;
 BEGIN { use_ok('Class::Simple') };				##

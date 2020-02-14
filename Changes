@@ -1,5 +1,11 @@
 Revision history for Perl extension Class::Simple.
-$Id: Changes,v 1.16 2007/10/29 21:13:40 sullivan Exp $
+$Id$
+
+1.1.1 Thu Feb 13 20:01:18 PST 2020
+        - Added GitHub repo info.
+
+1.1 Sat Dec  7 18:15:49 PST 2019
+        - Added initialization of attributes during new().
 
 0.16 Mon Oct 29 14:06:05 PDT 2007
 	- Added STORABLE_freeze() and STORABLE_thaw() to support Storable.

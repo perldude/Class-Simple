@@ -1,5 +1,5 @@
 Class-Simple
-=========================
+============
 
 This is a simple object-oriented base class.  There are plenty of oth-
 ers that are much more thorough and whatnot but sometimes I want some-
@@ -19,30 +19,21 @@ I did want some neat features, though, so these are inside-out objects
 muck with attributtes outside of methods), privatization of methods is
 supported, as is serialization out and back in again.
 
-Note that this is my first module for CPAN so please be gentle
-with the noob.
-
 INSTALLATION
 
 To install this module type the following:
 
-   perl Makefile.PL
-   make
-   make test
-   make install
-
-DEPENDENCIES
-
-This module requires these other modules and libraries:
-
-  Class::ISA
+   perl Build.PL
+   perl Build installdeps
+   perl Build test
+   perl Build install
 
 COPYRIGHT AND LICENCE
 
-Copyright (C) 2006 by Michael Sullivan (perldude@mac.com)
+Copyright (C) 2006-2020 by Michael Sullivan (perldude@mac.com)
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.6 or,
 at your option, any later version of Perl 5 you may have available.
 
-$Id: README,v 1.7 2007/08/23 17:42:16 sullivan Exp $
+$Id$
